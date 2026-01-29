@@ -17,7 +17,21 @@
                 :lib lib
                 :version version
                 :basis basis
-                :src-dirs ["src"]})
+                :src-dirs ["src"]
+                :pom-data [[:description "A Clojure wrapper for the Jikan (MyAnimeList) API."]
+                           [:url "https://github.com/adaiasmagdiel/jikan-clj"]
+                           [:scm [:url "https://github.com/adaiasmagdiel/jikan-clj"]
+                            [:connection "scm:git:git://github.com/adaiasmagdiel/jikan-clj.git"]
+                            [:developerConnection "scm:git:ssh://git@github.com/adaiasmagdiel/jikan-clj.git"]]
+                           [:licenses
+                            [:license
+                             [:name "GNU General Public License v3.0"]
+                             [:url "https://www.gnu.org/licenses/gpl-3.0.txt"]]]
+                           [:developers
+                            [:developer
+                             [:name "Adaías Magdiel"]
+                             [:email "eu@adaiasmagdiel.com"]
+                             [:url "https://adaiasmagdiel.com"]]]]})
   (b/copy-dir {:src-dirs ["src" "resources"]
                :target-dir class-dir})
   (b/jar {:class-dir class-dir
