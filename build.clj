@@ -4,7 +4,7 @@
   (:require [clojure.tools.build.api :as b]))
 
 (def lib 'com.adaiasmagdiel/jikan-clj)
-(def version "0.1.0")
+(def version "0.2.0")
 (def class-dir "target/classes")
 (def basis (b/create-basis {:project "deps.edn"}))
 (def jar-file (format "target/%s-%s.jar" (name lib) version))

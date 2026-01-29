@@ -15,7 +15,7 @@ A Clojure wrapper for the [Jikan API](https://jikan.moe/) (v4), the most popular
 Add the following dependency to your `deps.edn`:
 
 ```clojure
-com.adaiasmagdiel/jikan-clj {:mvn/version "0.1.0"}
+com.adaiasmagdiel/jikan-clj {:mvn/version "0.2.0"}
 ```
 
 ## Usage
