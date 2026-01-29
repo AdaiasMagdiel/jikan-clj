@@ -1,5 +1,8 @@
 # jikan-clj
 
+[![Clojars Project](https://img.shields.io/clojars/v/com.adaiasmagdiel/jikan-clj.svg)](https://clojars.org/com.adaiasmagdiel/jikan-clj)
+![status](https://img.shields.io/badge/status-alpha-orange)
+
 A Clojure wrapper for the [Jikan API](https://jikan.moe/) (v4), the most popular open-source MyAnimeList component.
 
 ## Status
