@@ -36,3 +36,9 @@
                :target-dir class-dir})
   (b/jar {:class-dir class-dir
           :jar-file jar-file}))
+
+(defn deploy [_]
+  (jar nil)
+  (b/process
+   {:command-args ["clojure" "-X:deploy"
+                   ":artifact" jar-file]}))
