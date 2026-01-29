@@ -1,0 +1,26 @@
+### Clojure ###
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+/lib/
+/classes/
+/target/
+/checkouts/
+.lein-deps-sum
+.lein-repl-history
+.lein-plugins/
+.lein-failures
+.nrepl-port
+.cpcache/
+
+# IDE / Language Server
+.lsp/
+.calva/
+.vscode/
+
+# Project local kondo cache (don't ignore your custom configs!)
+.clj-kondo/.cache/
+
+# Emacs/CIDER
+.nrepl-port
