@@ -1,7 +1,8 @@
 (ns build
   "Build script for com.adaiasmagdiel/jikan-clj.
    Provides tasks for cleaning and creating a JAR file."
-  (:require [clojure.tools.build.api :as b]))
+  (:require [clojure.tools.build.api :as b]
+            [deps-deploy.deps-deploy :as dd]))
 
 (def lib 'com.adaiasmagdiel/jikan-clj)
 (def version "0.2.0")
@@ -38,7 +39,10 @@
           :jar-file jar-file}))
 
 (defn deploy [_]
+  (println "Building JAR for release...")
+  (clean nil)
   (jar nil)
-  (b/process
-   {:command-args ["clojure" "-X:deploy"
-                   ":artifact" jar-file]}))
+  (println "Deploying to Clojars...")
+  (dd/deploy {:installer :remote
+              :artifact (str jar-file)
+              :pom-file (b/pom-path {:lib lib :class-dir class-dir})}))
