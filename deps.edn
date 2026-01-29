@@ -16,5 +16,4 @@
   :deploy {:extra-deps {slipset/deps-deploy {:mvn/version "0.2.1"}}
            :exec-fn deps-deploy.deps-deploy/deploy
            :exec-args {:installer :remote
-                       :artifact "target/jikan-clj-0.1.0.jar"
                        :pom-file "target/classes/META-INF/maven/com.adaiasmagdiel/jikan-clj/pom.xml"}}}}
