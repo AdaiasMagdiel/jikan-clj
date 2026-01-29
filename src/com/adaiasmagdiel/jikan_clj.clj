@@ -2,7 +2,21 @@
   "Main library namespace for Jikan API wrapper."
   (:require [com.adaiasmagdiel.utils :as utils]))
 
-(def ^:private base-url "https://api.jikan.moe/v4")
+(def ^:private settings
+  (atom {:base-url "https://api.jikan.moe/v4"}))
+
+(defn configure
+  "Globally configures the wrapper options.
+   
+   Currently supports:
+   - `:base-url`: The root URL for the Jikan API.
+   
+   Example:
+   (configure {:base-url \"https://my-proxy-server.com/v4\"})"
+  [config]
+  (swap! settings merge config))
+
+;; === ANIME
 
 (defn anime
   "Fetches anime details by ID. Returns nil if not found.
@@ -13,5 +27,5 @@
   ([id] (anime id false))
   ([id full?]
    (let [endpoint (str "/anime/" id (if full? "/full" ""))
-         url (str base-url endpoint)]
+         url (str (:base-url @settings) endpoint)]
      (utils/fetch-safe url))))
